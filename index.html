@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Minimalist Diary Calendar</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<h2>My Minimalist Diary</h2>
+		<div id="calendar-container">
+			<div class="calendar-header">
+				<button onclick="changeMonth(-1)">&#8592;</button>
+				<span
+					id="currentMonth"
+					style="font-size: 20px"
+					onclick="openYearMonthPopup()"
+				></span>
+				<button onclick="changeMonth(1)">&#8594;</button>
+			</div>
+			<div id="calendar" class="calendar"></div>
+		</div>
+
+		<div id="background-overlay" onclick="closeNotepad()"></div>
+
+		<div id="notepad" class="notepad">
+			<h3>Diary Entry for <span id="selectedDate"></span></h3>
+			<textarea
+				id="entryText"
+				placeholder="Write your entry here..."
+			></textarea>
+			<button onclick="saveEntry()">Save</button>
+			<button onclick="closeNotepad()">Close</button>
+		</div>
+
+		<div id="year-month-overlay">
+			<div class="year-month-popup">
+				<h3>Select Month and Year</h3>
+				<select id="monthSelect">
+					<option value="0">January</option>
+					<option value="1">February</option>
+					<option value="2">March</option>
+					<option value="3">April</option>
+					<option value="4">May</option>
+					<option value="5">June</option>
+					<option value="6">July</option>
+					<option value="7">August</option>
+					<option value="8">September</option>
+					<option value="9">October</option>
+					<option value="10">November</option>
+					<option value="11">December</option>
+				</select>
+				<select id="yearSelect"></select>
+				<button onclick="setYearMonth()">Set</button>
+				<button onclick="closeYearMonthPopup()">Cancel</button>
+			</div>
+		</div>
+		<script src="script.js"></script>
+	</body>
+</html>

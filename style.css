@@ -1,0 +1,245 @@
+/* General body styles */
+body {
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	background: linear-gradient(135deg, #fdfbfb, #ebedee);
+	min-height: 100vh;
+	margin: 0;
+	padding: 20px;
+	color: #333;
+}
+
+h2 {
+	font-size: 30px;
+}
+
+/* Calendar Header */
+#calendar-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 600px;
+}
+
+.calendar-header {
+	display: flex;
+	justify-content: space-between;
+	width: 100%;
+	max-width: 700px;
+	margin-bottom: 20px;
+	align-items: center;
+	background: #fff;
+	padding: 10px 20px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header button {
+	padding: 10px 15px;
+	font-size: 16px;
+	background-color: #007bff;
+	color: #fff;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.calendar-header button:hover {
+	background-color: #0056b3;
+}
+
+.calendar-header span {
+	font-size: 18px;
+	font-weight: bold;
+	cursor: pointer;
+	color: #007bff;
+}
+
+/* Calendar Grid */
+.calendar {
+	display: grid;
+	grid-template-columns: repeat(7, 1fr);
+	gap: 10px;
+	max-width: 700px;
+	width: 610px;
+	background: #fff;
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-day {
+	padding: 20px;
+	background-color: #f9f9f9;
+	border: 1px solid #ddd;
+	text-align: center;
+	cursor: pointer;
+	border-radius: 6px;
+	font-weight: 500;
+	transition: all 0.3s ease;
+}
+
+.calendar-day:hover {
+	background-color: #007bff;
+	color: #fff;
+	transform: scale(1.05);
+}
+
+/* Overlay Background */
+#background-overlay,
+#year-month-overlay {
+	display: none;
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 100vh;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 999;
+	justify-content: center;
+	align-items: center;
+}
+
+/* Notepad Popup */
+.notepad {
+	display: none;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #ffffff;
+	padding: 25px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 500px;
+	z-index: 1000;
+}
+
+.notepad h3 {
+	font-size: 20px;
+	margin-bottom: 15px;
+	color: #007bff;
+	text-align: center;
+}
+
+.notepad textarea {
+	width: 100%;
+	height: 150px;
+	margin-bottom: 10px;
+	font-family: "Comic Sans MS", "Comic Sans", cursive;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	resize: none;
+	box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.notepad button {
+	padding: 10px 15px;
+	margin-right: 5px;
+	font-size: 14px;
+	color: #fff;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.notepad button:nth-of-type(1) {
+	background-color: #28a745;
+}
+
+.notepad button:nth-of-type(1):hover {
+	background-color: #218838;
+}
+
+.notepad button:nth-of-type(2) {
+	background-color: #dc3545;
+}
+
+.notepad button:nth-of-type(2):hover {
+	background-color: #c82333;
+}
+
+/* Year-Month Popup */
+.year-month-popup {
+	background-color: #ffffff;
+	padding: 20px;
+	border: 1px solid #ddd;
+	border-radius: 8px;
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+	width: 90%;
+	max-width: 400px;
+	z-index: 1000;
+}
+
+.year-month-popup h3 {
+	font-size: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: #007bff;
+}
+
+.year-month-popup select {
+	margin: 10px 5px;
+	padding: 10px;
+	font-size: 14px;
+	border: 1px solid #ddd;
+	border-radius: 6px;
+	width: 45%;
+}
+
+.year-month-popup button {
+	padding: 10px 15px;
+	font-size: 14px;
+	color: #fff;
+	margin-left: 5px;
+	border: none;
+	border-radius: 6px;
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.year-month-popup button:nth-of-type(1) {
+	background-color: #007bff;
+}
+
+.year-month-popup button:nth-of-type(1):hover {
+	background-color: #0056b3;
+}
+
+.year-month-popup button:nth-of-type(2) {
+	background-color: #dc3545;
+}
+
+.year-month-popup button:nth-of-type(2):hover {
+	background-color: #c82333;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+	.calendar-header {
+		flex-direction: column;
+		gap: 10px;
+	}
+
+	.calendar {
+		grid-template-columns: repeat(7, 1fr);
+		gap: 8px;
+	}
+
+	.calendar-day {
+		padding: 15px;
+	}
+
+	.notepad,
+	.year-month-popup {
+		width: 90%;
+	}
+}
