@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Minimalist Diary Calendar</title>
+		<title>Minimalist Diary</title>
 		<link rel="stylesheet" href="style.css" />
 	</head>
 	<body>
@@ -33,6 +33,13 @@
 			<button onclick="closeNotepad()">Close</button>
 		</div>
 
+		<div id="entries-container" style="margin-top: 20px">
+			<h3>Your Entries</h3>
+			<div id="entries-list">
+				<!-- Entries will be populated dynamically -->
+			</div>
+		</div>
+
 		<div id="year-month-overlay">
 			<div class="year-month-popup">
 				<h3>Select Month and Year</h3>
@@ -55,6 +62,7 @@
 				<button onclick="closeYearMonthPopup()">Cancel</button>
 			</div>
 		</div>
+
 		<script src="script.js"></script>
 	</body>
 </html>
